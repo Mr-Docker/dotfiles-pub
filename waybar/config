@@ -1,0 +1,86 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "modules-left": ["river/tags", "user", "disk", "custom/script"],
+    "modules-center": ["river/window"],
+    "modules-right": ["wireplumber", "wireplumber#source", "bluetooth", "backlight", "network", "battery", "clock"],
+
+    "river/tags": {
+        "num-tags": 9,
+        "disable-click": true,
+        "hide-vacant": true
+    },
+
+    "river/window": {
+        "format": "  {}",
+        "max-length": 91
+    },
+
+    //"river/mode": {
+      //  "format": "mode: {title}"
+    //},
+
+    "custom/script": {
+        "exec": "/home/kle/Documents/shell-scripts/docker.sh",
+        "format": "Docker {text}"
+    },
+
+    "disk": {
+        "format": "{free}"
+    },
+
+    "user": {
+        "format": "  | {user}"
+    },
+
+    "clock": {
+        "format": "{:%d.%m.%Y | %H:%M}"
+    },
+
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": ["", "", ""],
+        "max-volume": 100,
+        "scroll-step": 5
+    },
+
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "󰍬",
+        "format-muted": "󰍭",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 5
+    },
+
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+
+    "network": {
+        "interface": "wlan0", //wlan0 (wifi) | usb0 (tether) | (ethernet)
+        "format": "{essid}  ",
+        "format-ethernet": "{ipaddr}/{cidr}"
+    },
+
+    //"memory": {
+      //  "format": "{percentage}% "
+    //},
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-disabled": "",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format-no-controller": ""
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "format": "{icon}  {capacity}%",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+    }
+
+}

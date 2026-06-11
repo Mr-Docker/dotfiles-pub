@@ -1,0 +1,63 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Hack Nerd Font;
+    font-size: 12px;
+    min-height: 0;
+    padding: 0 10px;
+}
+
+window#waybar {
+    background: #1D1F21;
+    color: #AAABAA;
+}
+
+/*#custom, #wireplumber, #mode, #clock, #battery, #backlight, #network, #memory, #temperature, #bluetooth {
+    padding: 0 10px;
+}*/
+
+#mode {
+    background: #64727D;
+}
+
+#clock, #network, #wireplumber #battry, #backlight {
+    background-color: #1D1F21;   
+    color: #AAABAA;
+}
+
+/*#battery, #backlight {
+    background-color: #ffffff;
+    color: black;
+}*/
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+#tags button {
+    background-color: #1D1F21;
+    color: white;
+}
+
+#tags button.focused {
+    background-color: #AAABAA;
+    color: black;
+}
+
+/*@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}*/
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
