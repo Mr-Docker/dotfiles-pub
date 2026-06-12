@@ -1,0 +1,100 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        //"os": "#ACB0BE",
+        "os": "#D7B491",
+        "closer": "p:os",
+        "pink": "#F4B8E4",
+        "lavender": "#FFDAB4",
+        "wheat": "#FFC384",
+        "rust": "#cd853f",
+        "blue":  "#8CAAEE",
+        "white": "#f6f4d2",
+        "red": "#FF6F61"
+
+
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\n",
+          "foreground": "#f8f8f2",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "foreground": "p:white", //change back to p:os
+          "style": "plain",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "p:rust", //change back to p:rust
+          "style": "plain",
+          //"template": "{{ .UserName }}@{{ .HostName }} ",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "yellow",
+          "properties": {
+            "fetch_version": false,
+            "fetch_virtual_env": true
+          },
+          "style": "plain",
+          "template": "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ .Full }}{{ end }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]</>",
+          "type": "python"
+        },
+        {
+          "foreground": "p:wheat", //change back to p:wheat
+          "properties": {
+            //"folder_icon": "\ue5fe",
+            "home_icon": "~",
+            "style": "agnoster_short"
+          },
+          "style": "plain",
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "p:lavender",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": "{{ .HEAD }} ",
+          "style": "plain",
+          "type": "git"
+        },
+        // {
+        //   "style": "plain",
+        //   "foreground": "p:closer",
+        //   "template": "\uf105",
+        //   "type": "text"
+        // },
+        {
+          "style": "plain",
+          "type": "text",
+          "template": "\n\uf105\uf105"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}
+
